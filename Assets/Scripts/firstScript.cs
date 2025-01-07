@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 public class firstScript : MonoBehaviour
@@ -14,11 +15,18 @@ public class firstScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Left screen
+        Vector2 screenSizeZero = Camera.main.ScreenToWorldPoint(Vector2.zero);
+
+        //Right screen
         Vector2 pos = transform.position;
+        Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+        Vector2 screenSizeWorld = Camera.main.ScreenToWorldPoint(screenSize);
+
         pos.x += speed;
         transform.position = pos;
 
-        if (pos.x < -5 || pos.x > 5)
+        if (pos.x < screenSizeZero.x || pos.x > screenSizeWorld.x)
         {
             speed = speed * -1;
         }

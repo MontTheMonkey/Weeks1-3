@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class firstScript : MonoBehaviour
 {
-    public float speed = 0.01f;
+    public float speed = 3.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +23,21 @@ public class firstScript : MonoBehaviour
         Vector2 screenSize = new Vector2(Screen.width, Screen.height);
         Vector2 screenSizeWorld = Camera.main.ScreenToWorldPoint(screenSize);
 
-        pos.x += speed;
+        pos.x += speed * Time.deltaTime;
         transform.position = pos;
 
-        if (pos.x < screenSizeZero.x || pos.x > screenSizeWorld.x)
+        if (pos.x < screenSizeZero.x)
         {
+            //pos.x = screenSizeZero.x; <Trial
+            Vector2 zerodPos = new Vector2(screenSizeWorld.x, 0);
+            pos.x = zerodPos.x;
+            speed = speed * -1;
+        }
+        else if(pos.x > screenSizeWorld.x)
+        {
+            //pos.x = screenSizeWorld.x; <Trial
+            Vector2 zerodPos = new Vector2(screenSizeWorld.x, 0);
+            pos.x = zerodPos.x;
             speed = speed * -1;
         }
     }

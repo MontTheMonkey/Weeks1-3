@@ -22,7 +22,7 @@ public class Lerpicus : MonoBehaviour
         t += 0.01f;
         if (t >= 1)
         {
-            t = t * -1f;
+            t = t * -0.01f;
         }
     }
 }

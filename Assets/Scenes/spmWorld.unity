@@ -408,7 +408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587748337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0cc01a6e1dd65341b749c8863c9d0c0, type: 3}
   m_Name: 
@@ -498,7 +498,40 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 948dcf88642a7d04896b4ec5aea20562, type: 3}
   - {fileID: 21300000, guid: 1631ff361953e1c429722a3827d555d5, type: 3}
   - {fileID: 21300000, guid: 817139dab0c118d4499383a32823367d, type: 3}
-  mJump: 5
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1.1555568
+      outSlope: 1.1555568
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.80415344
+      value: 0.929245
+      inSlope: -1.1322412
+      outSlope: -1.1322412
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.1139751
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.004716981
+      inSlope: -4.7206755
+      outSlope: -4.7206755
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mJump: 0
 --- !u!1 &1790821986
 GameObject:
   m_ObjectHideFlags: 0
@@ -529,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2880501f71bb2904f8042c186653f086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotaValue: 0.5
+  rotaValue: 15
 --- !u!212 &1790821988
 SpriteRenderer:
   m_ObjectHideFlags: 0

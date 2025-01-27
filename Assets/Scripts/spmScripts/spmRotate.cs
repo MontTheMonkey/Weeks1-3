@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class spmRotate : MonoBehaviour
 {
-    [Range(-1.5f, 1.5f)]
-    public float rotaValue = 0.5f;
+    //The value of the stars rotation
+    [Range(-30, 30)]
+    public float rotaValue = 15f;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +17,18 @@ public class spmRotate : MonoBehaviour
     void Update()
     {
         Vector3 zRotate = transform.eulerAngles;
-        zRotate.z += rotaValue;
+        zRotate.z += rotaValue * Time.deltaTime;
         transform.eulerAngles = zRotate;
-        if (zRotate.z > 1.5) {
-            zRotate.z = zRotate.z - 1 * Time.deltaTime;
+        //When it reaches the end point of rotation, revert back the other way to reach the other end point (-30 Z value)
+        if (zRotate.z > 30) {
+            zRotate.z = 30;
+            rotaValue = rotaValue * -1;
         }
-        if (zRotate.z < -1.5)
+        //When it reaches -30 Z value, rotate towards 30 Z value)
+        if (zRotate.z < -30)
         {
-            zRotate.z = zRotate.z - 1 * Time.deltaTime;
+            zRotate.z = -30;
+            rotaValue = rotaValue * -1;
         }
     }
 }

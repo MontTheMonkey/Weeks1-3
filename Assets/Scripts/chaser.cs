@@ -29,6 +29,10 @@ public class chaser : MonoBehaviour
         bool yMaxExceeded = Input.mousePosition.y > Screen.height;
         Debug.Log("X max exceeded = " + xMaxExceeded.ToString());
         Debug.Log("Y max exceeded = " + yMaxExceeded.ToString());
+        bool xMinExceeded = Input.mousePosition.x < 0;
+        bool yMinExceeded = Input.mousePosition.y < 0;
+        Debug.Log("X min exceeded = " + xMinExceeded.ToString());
+        Debug.Log("Y min exceeded = " + yMinExceeded.ToString());
         Vector3 origin = transform.position;
         Vector3 target = mousePosWS;
         Vector3 dirToMove = target - origin;

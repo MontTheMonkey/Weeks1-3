@@ -10,7 +10,6 @@ public class spawner : MonoBehaviour
     public List<GameObject> spawnedObjs = new List<GameObject>();
     List<int> destroyTimers = new List<int>();
     private float destroyTimer = 0.1f;
-    int ed = -1;
     // Start is called before the first frame update
     void Start()
     {

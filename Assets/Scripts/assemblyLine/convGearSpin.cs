@@ -15,7 +15,7 @@ public class convGearSpin : MonoBehaviour
     void Update()
     {
         objRotation.z = 1;
-        transform.eulerAngles += objRotation;
+        //transform.eulerAngles += objRotation;
         if (Input.GetKey(KeyCode.Space) == true)
         {
             transform.eulerAngles -= objRotation;

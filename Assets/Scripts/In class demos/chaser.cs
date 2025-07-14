@@ -9,8 +9,8 @@ public class chaser : MonoBehaviour
     public Camera igCam;
     public float speed;
     Vector3 mousePosWS;
-    float xMinPos = 0f, xMaxPos = Screen.width;
-    float yMinPos = 0f, yMaxPos = Screen.height;
+    float xMaxPos = Screen.width;
+    float yMaxPos = Screen.height;
     bool xMaxExceeded, yMaxExceeded;
 
     // Start is called before the first frame update

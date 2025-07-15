@@ -8,7 +8,8 @@ public class woodObj : MonoBehaviour
     Vector3 woodPos;
     public GameObject woodObject;
     public Sprite plankSpr;
-    public SpriteRenderer woodSpr;
+    public Sprite woodSpr;
+    public SpriteRenderer woodRender;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +25,12 @@ public class woodObj : MonoBehaviour
         }
         if (woodPos.x > -0.5f)
         {
-            woodSpr.sprite = plankSpr;
+            woodRender.sprite = plankSpr;
         }
-        if (woodPos.x > 11.5f)
+        if (woodPos.x > 11f)
         {
-            Destroy(woodObject);
+            woodPos = new Vector3(-11, -1.51f, 0);
+            woodRender.sprite = woodSpr;
         }
         transform.position = woodPos;
         Debug.Log("The position of the wood is " + woodPos);

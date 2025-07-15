@@ -3,7 +3,10 @@ guid: 07dfbb3a9324dd7e1bac71f4bff96100
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - woodObject: {fileID: 4062287518644716817, guid: 37bf4e8669beda130a544804bc0d6fb2, type: 3}
+  - plankSpr: {fileID: 21300000, guid: e837162d50882547790647b573d6ad8c, type: 3}
+  - woodSpr: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

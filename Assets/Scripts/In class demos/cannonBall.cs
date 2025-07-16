@@ -13,8 +13,9 @@ public class cannonBall : MonoBehaviour
     void Start()
     {
         startPos = transform.position;
+        startPos.z = 2f;
         endPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        endPos.z = 0f;
+        endPos.z = 2f;
         Destroy(cnBallObj, shotDuration);
     }
 

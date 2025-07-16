@@ -8,7 +8,7 @@ public class cannonFire : MonoBehaviour
     Vector3 origin = new Vector3();
     Vector3 target = new Vector3();
     Vector2 cannonAim = new Vector3();
-    public GameObject cnBallObj;
+    public GameObject canBallPrefab;
     public Color cannonBallColour;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,11 @@ public class cannonFire : MonoBehaviour
         transform.right = -cannonAim;
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Instantiate(cnBallObj);
+            GameObject firedCanBallObj = Instantiate(canBallPrefab, origin, Quaternion.identity);
+            SpriteRenderer firedCanBallSpr = firedCanBallObj.GetComponent<SpriteRenderer>();
+            cannonBall canBallScript = firedCanBallObj.GetComponent<cannonBall>();
+            canBallScript.shotDuration = 0.5f;
+            firedCanBallSpr.color = Color.red;
         }
         //cannonBall cannonBall;
         //cannonBall.shotDuration;

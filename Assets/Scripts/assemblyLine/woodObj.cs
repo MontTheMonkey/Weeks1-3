@@ -10,19 +10,27 @@ public class woodObj : MonoBehaviour
     public Sprite plankSpr;
     public Sprite woodSpr;
     public SpriteRenderer woodRender;
+    public float woodSpeed = 1.25f;
+    Vector3 woodOrigin = new Vector3(-11, -1.51f, 0);
+    bool startLine;
     // Start is called before the first frame update
     void Start()
     {
-        woodPos = new Vector3(-11, -1.51f, 0);
+        woodPos = woodOrigin;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            woodPos.x = woodPos.x + 1.25f * Time.deltaTime;
+            startLine =! startLine;
         }
+        if (startLine == true)
+        {
+            woodPos.x = woodPos.x + woodSpeed * Time.deltaTime;
+        }
+            
         if (woodPos.x > -0.5f)
         {
             woodRender.sprite = plankSpr;

@@ -5,6 +5,8 @@ using UnityEngine;
 public class convGearSpin : MonoBehaviour
 {
     Vector3 objRotation;
+    bool startLine;
+    public float gearSpeed = 25f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +16,15 @@ public class convGearSpin : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        objRotation.z = 1;
-        //transform.eulerAngles += objRotation;
-        if (Input.GetKey(KeyCode.Space) == true)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            transform.eulerAngles -= objRotation;
+            startLine =! startLine;
         }
+        if (startLine == true)
+        {
+            objRotation.z += gearSpeed * Time.deltaTime;
+        }
+        transform.eulerAngles = objRotation;
+        
     }
 }
